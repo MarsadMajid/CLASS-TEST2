@@ -9,7 +9,10 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
-model User {
-  id    String  @id @default(auto()) @map("_id") @db.ObjectId
-  email String  @unique
+model Bills {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  consumerNumber String
+  units          Int
+  status         Boolean
+  address        String?
 }
